@@ -64,12 +64,12 @@ img {
   position: relative;
   left: 50%;
   margin: 0px -73.5px;
+  overflow: hidden;
 }
 
 .album {
   width: 150px;
   height:150px;
-  border: 1px dotted green;
   display: block;
   margin: 15px 0px 0px;
 }
@@ -77,6 +77,7 @@ img {
 footer {
   height: 6vh;
   background-color: #666658;
+  position: relative;
 }
 
 small {
