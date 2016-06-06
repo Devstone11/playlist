@@ -1,3 +1,5 @@
+//Splash Page
+
 var xmlObj = new XMLHttpRequest();
 var albumCovers = document.getElementsByClassName("album");
 
@@ -15,9 +17,10 @@ xmlObj.onreadystatechange = function() {
       }
     }
 };
-
 xmlObj.open("GET", "https://lit-fortress-6467.herokuapp.com/object");
 xmlObj.send();
+
+//Playlist Page
 
 $.get("https://lit-fortress-6467.herokuapp.com/object", function(data) {
   data.results.forEach(function(thing) {
@@ -33,4 +36,15 @@ $.get("https://lit-fortress-6467.herokuapp.com/object", function(data) {
     }, 0);
     $('#playlist').append(`<div>${artist}: ${album}</div>`);
   })
+})
+
+$('#clear').on("click", function() {
+  $('#playlist').empty();
+})
+
+$('#submit').on("click", function() {
+  $.post("https://lit-fortress-6467.herokuapp.com/post", function(data) {
+    console.log(data);
+  })
+  $('#playlist').empty();
 })
