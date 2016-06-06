@@ -27,15 +27,14 @@ main {
   height: 98px;
 }
 
-.album {
-  height: 53px;
-  width: 53px;
+.cover {
+  height: 58px;
+  width: 58px;
   display: inline-block;
-  border: 1px dashed red;
   margin: 8px 14px;
 }
 
-.album:nth-child(1) {
+.cover:nth-child(1) {
     margin-left: 37px;
 }
 
