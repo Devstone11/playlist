@@ -31,19 +31,25 @@ $.get("https://api.spotify.com/v1/albums/?ids=3NW7YlpaDa97jm259PIVCZ,0eQlvrTmnyi
     $('#insideAlbums').append(div);
   })
   $('.cover').on("click", function(event) {
+    $('#inner-choice').empty();
     var album = $(this).attr("id")
     var artist = data.albums.reduce(function(prev,curr) {
       return (curr.name === album) ? curr.artists[0].name : prev;
     }, 0);
-    $('#playlist').append("<div>"+artist + ": " + album + "</div>");
-    $(this).hide();
+    var imgSrc = data.albums.reduce(function(prev,curr) {
+      return (curr.name === album) ? curr.images[1].url : prev;
+    }, 0);
+    var img = $("<img src="+ imgSrc +">");
+    img.css({"height": "90px", "width": "90px", "position": "absolute", "right": "25px"});
+    $('#inner-choice').append("<div>"+artist +": "+ album + "</div>").append(img);
     $('.post-results').hide();
+
+    
   })
 })
 
 $('#clear').on("click", function() {
-  $('#playlist').empty();
-  $('.cover').show();
+  $('.tracks').empty();
   $('.post-results').hide();
 })
 
