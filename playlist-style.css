@@ -1,6 +1,7 @@
 body {
   margin: 0px;
   font-family: "Avenir";
+  overflow:hidden;
 }
 
 header {
@@ -24,7 +25,13 @@ main {
 
 #albums {
   border-bottom: 9px solid #DDDDDD;
+  width: 100%;
   height: 98px;
+  overflow:scroll;
+}
+
+#insideAlbums {
+  width: 1800px;
 }
 
 .cover {
@@ -46,6 +53,7 @@ main {
   margin: 25px 42px 12px;
   padding: 3px;
   color: #292929;
+  overflow: scroll;
 }
 
 button {
@@ -75,78 +83,3 @@ small {
   font-size: 18px;
   color: #CFCFCB;
 }
-
-/*
-
-header {
-  height: 6vh;
-  background-color: #9B9B8C;
-  border-bottom: 1px solid black;
-}
-
-main {
-  height: 88vh;
-  background-color: #EEEEEE;
-}
-
-main div {
-  width: 47%;
-  height: 100%;
-  float:left;
-  position: relative;
-}
-
-#box {
-  width: 220px;
-  height: 105px;
-  font-family: "Avenir";
-  text-align:center;
-  color: #470062;
-  font-size: 45px;
-  position: relative;
-  left: 45%;
-  top: 45%;
-  margin: -52.5px 0 0 -110px;
-}
-
-button {
-  width: 170px;
-  height: 35px;
-  background-color: #353526;
-  border: none;
-  border-radius: 5px;
-  color: #CFCFCB;
-  font-size: 17px;
-  position: absolute;
-  bottom: 5px;
-  right: 24px;
-}
-
-#right {
-  width:53%;
-  position: relative;
-}
-
-img {
-  width: 100%;
-  height: 100%;
-  opacity: .19;
-  position: absolute;
-  z-index: 0;
-}
-
-#album-container {
-  width: 150px;
-  position: relative;
-  left: 50%;
-  margin: 0px -73.5px;
-  overflow: hidden;
-}
-
-.album {
-  width: 150px;
-  height:150px;
-  display: block;
-  margin: 15px 0px 0px;
-}
-}*/

@@ -64,7 +64,7 @@ img {
   position: relative;
   left: 50%;
   margin: 0px -73.5px;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .album {
