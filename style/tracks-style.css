@@ -1,0 +1,102 @@
+body {
+  margin: 0px;
+  font-family: "Avenir";
+  overflow:hidden;
+}
+
+header {
+  height: 17vh;
+  background-color: #9B9B8C;
+  position: relative;
+}
+
+header div {
+  font-size: 26px;
+  color: #F5F5F4;
+  position: absolute;
+  bottom: 0px;
+  left: 35px;
+}
+
+main {
+  height: 77vh;
+  background-color: #FFFFFF;
+}
+
+#albums {
+  border-bottom: 9px solid #DDDDDD;
+  width: 100%;
+  height: 98px;
+  overflow:scroll;
+}
+
+#insideAlbums {
+  width: 1800px;
+}
+
+.cover {
+  height: 58px;
+  width: 58px;
+  display: inline-block;
+  margin: 8px 14px;
+}
+
+.cover:nth-child(1) {
+    margin-left: 37px;
+}
+
+.playlist {
+  height: 143px;
+  padding: 3px;
+  display: inline-block;
+  margin: 25px 0px 12px;
+}
+
+.choice {
+  width: 193px;
+  margin-left: 39px;
+  text-align: left;
+  vertical-align: top;
+}
+
+
+img.playlist {
+  height: 75px;
+  margin-bottom: 60px;
+}
+
+ .tracks {
+  border: 2px solid #000000;
+  background-color: #E8E8E8;
+  color: #292929;
+  overflow: scroll;
+  width: 230px
+}
+
+button {
+  background-color: #343425;
+  color: #C4C4C0;
+  border-radius: 5px;
+  border: none;
+  height: 38px;
+  width: 175px;
+  margin-left: 11px;
+  font-size: 18px;
+}
+
+button:nth-child(1) {
+  margin: 6px 0px 0px 42px;
+}
+
+footer {
+  height: 6vh;
+  background-color: #666658;
+  position: relative;
+}
+
+small {
+  display:inline-block;
+  margin: 5px 45px;
+  font-size: 18px;
+  color: #CFCFCB;
+}
