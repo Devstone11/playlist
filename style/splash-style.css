@@ -21,7 +21,8 @@ main div {
 }
 
 #box {
-  width: 220px;
+  /*width: 220px;*/
+  width: 350px;
   height: 105px;
   font-family: "Avenir";
   text-align:center;
@@ -30,7 +31,7 @@ main div {
   position: relative;
   left: 45%;
   top: 45%;
-  margin: -52.5px 0 0 -110px;
+  margin: -52.5px 0 0 -175px;
 }
 
 button {
@@ -42,8 +43,9 @@ button {
   color: #CFCFCB;
   font-size: 17px;
   position: absolute;
-  bottom: 5px;
-  right: 24px;
+  bottom: -55px;
+  right: 90px;
+  /*margin: 0 auto 20px;*/
 }
 
 #right {

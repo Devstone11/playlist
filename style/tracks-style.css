@@ -47,7 +47,7 @@ main {
 
 .playlist {
   height: 155px;
-  padding: 3px;
+  /*padding: 3px;*/
   display: inline-block;
   margin: 25px 0px 12px;
 }
@@ -59,6 +59,7 @@ main {
   vertical-align: top;
   overflow:scroll;
   position: relative;
+  padding: 3px;
 }
 
 
@@ -73,6 +74,15 @@ img.playlist {
   color: #292929;
   overflow: scroll;
   width: 230px
+}
+
+#album-tracks {
+  width: 450px;
+}
+
+.song {
+  border-bottom: 1px solid #C9C9C9;
+  padding: 3px;
 }
 
 button {

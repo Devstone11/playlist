@@ -6,7 +6,7 @@ var albumCovers = document.getElementsByClassName("album");
 xmlObj.onreadystatechange = function() {
     if (xmlObj.readyState === 4 && xmlObj.status === 200) {
       var myAlbums = JSON.parse(xmlObj.responseText).albums;
-      console.log(myAlbums);
+      // console.log(myAlbums);
       var imgArr = [];
       for (var i = 0; i < 3; i++) {
         var randArt = myAlbums.splice(Math.floor(Math.random()*myAlbums.length),1)[0].images[1].url;
@@ -32,35 +32,53 @@ $.get("https://api.spotify.com/v1/albums/?ids=3NW7YlpaDa97jm259PIVCZ,0eQlvrTmnyi
   })
   $('.cover').on("click", function(event) {
     $('#inner-choice').empty();
-    var album = $(this).attr("id")
+    $('#album-tracks').empty();
+
+    var album = $(this).attr("id");
+
     var artist = data.albums.reduce(function(prev,curr) {
       return (curr.name === album) ? curr.artists[0].name : prev;
     }, 0);
+
     var imgSrc = data.albums.reduce(function(prev,curr) {
       return (curr.name === album) ? curr.images[1].url : prev;
     }, 0);
+
+    var tracks = data.albums.reduce(function(prev,curr) {
+      return (curr.name === album) ? curr.tracks.items : prev;
+    }, 0);
+
     var img = $("<img src="+ imgSrc +">");
     img.css({"height": "90px", "width": "90px", "position": "absolute", "right": "25px"});
+
     $('#inner-choice').append("<div>"+artist +": "+ album + "</div>").append(img);
     $('.post-results').hide();
 
-    
+    tracks.forEach(function(obj) {
+      $('#album-tracks').append("<div class='song' id="+obj.name+">"+obj.name+"</div>");
+    })
+
+    $('.song').on('click', function(event) {
+      var songCopy = $("<div>" + $(this).html() + "</div>")
+      $('#playlist-tracks').append(songCopy);
+    })
   })
+
 })
 
 $('#clear').on("click", function() {
-  $('.tracks').empty();
+  $('#playlist-tracks').empty();
   $('.post-results').hide();
 })
 
 var postDiv = function(contents) {
-  return $("<div>" + contents + "</div>").css("margin", "15px 40px").addClass("post-results");
+  return $("<div class='post-results'>" + contents + "</div>").css("margin", "15px 40px");
 };
 
 $('#submit').on("click", function() {
   $.post("https://lit-fortress-6467.herokuapp.com/post", function(data) {
     $('main').append(postDiv(data));
   })
-  $('#playlist').empty();
+  $('#playlist-tracks').empty();
   $('.cover').show();
 })
