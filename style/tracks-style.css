@@ -47,7 +47,6 @@ main {
 
 .playlist {
   height: 155px;
-  /*padding: 3px;*/
   display: inline-block;
   margin: 25px 0px 12px;
 }
@@ -68,7 +67,7 @@ img.playlist {
   margin-bottom: 60px;
 }
 
- .tracks {
+.tracks {
   border: 2px solid #000000;
   background-color: #E8E8E8;
   color: #292929;
@@ -76,7 +75,7 @@ img.playlist {
   width: 230px
 }
 
-#album-tracks {
+.tracks-box {
   width: 450px;
 }
 
