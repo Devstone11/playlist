@@ -21,11 +21,12 @@ header div {
 main {
   height: 77vh;
   background-color: #FFFFFF;
+  overflow: scroll;
 }
 
 #albums {
   border-bottom: 9px solid #DDDDDD;
-  width: 100%;
+  min-width: 1200px;
   height: 98px;
   overflow:scroll;
 }
@@ -45,6 +46,11 @@ main {
     margin-left: 37px;
 }
 
+#bin {
+  width: 1200px;
+  position: relative;
+}
+
 .playlist {
   height: 155px;
   display: inline-block;
@@ -60,7 +66,6 @@ main {
   position: relative;
   padding: 3px;
 }
-
 
 img.playlist {
   height: 75px;
@@ -84,6 +89,22 @@ img.playlist {
   padding: 3px;
 }
 
+.selected {
+  background-color: #3D5AB5;
+}
+
+.preview {
+  width: 250px;
+  text-align: left;
+  vertical-align: top;
+  margin-left: 20px;
+}
+
+audio {
+  margin-top: 20px;
+}
+
+
 button {
   background-color: #343425;
   color: #C4C4C0;
@@ -97,6 +118,23 @@ button {
 
 button:nth-child(1) {
   margin: 6px 0px 0px 42px;
+}
+
+#delete {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  right: 360px;
+  bottom: -30px;
+  background-color: #E8E8E8;
+  border: 1px solid #000000;
+  color: #9C291D;
+  font-size: 50px;
+  padding: 0px;
+}
+
+#delete div {
+  margin-top: -17px;
 }
 
 footer {

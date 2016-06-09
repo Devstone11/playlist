@@ -29,9 +29,11 @@ function assignBackground(array) {
 $(document).ready(function() {
   loadAlbumCovers();
   $(document).on('click', '.cover', displayAlbumInfo);
-  $(document).on('click', '.song', addToPlaylist);
+  $(document).on('click', '.album-tracks .song', addToPlaylist);
   $(document).on('click', '#clear', clearTracks);
   $(document).on('click', '#submit', submit);
+  $(document).on('click', '.song-copy', showPreview);
+  $(document).on('click', '#delete', deleteSong);
 
   function loadAlbumCovers() {
     $.get(spotifyUrl, function(data) {
@@ -74,17 +76,33 @@ $(document).ready(function() {
       return (curr.name === album) ? curr.tracks.items : prev;
     }, 0);
     tracks.forEach(function(obj) {
-      $('.album-tracks').append("<div class='song' id="+obj.name+">"+obj.name+"</div>");
+      $('.album-tracks').append("<div class='song' id="+obj.preview_url+">"+obj.name+"</div>");
     })
   }
 
   function addToPlaylist() {
-    var songCopy = $("<div class='song'>" + $(this).html() + "</div>")
+    var songPrevUrl = $(this).attr("id");
+    var songName = $(this).html();
+    var songCopy = $("<div class='song song-copy' id="+songPrevUrl+">" + songName + "</div>")
     $('.playlist-tracks').append(songCopy);
+  }
+
+  function showPreview() {
+    $(".song").removeClass("selected");
+    $(this).addClass("selected");
+    var songPrevUrl = $(this).attr("id");
+    var prevPlayer = $("<audio controls src='"+$(this).attr("id")+"'</audio>");
+    $(".preview").html("Preview this track:");
+    $(".preview").append(prevPlayer);
+  }
+
+  function deleteSong() {
+    $(".selected").hide();
   }
 
   function clearTracks() {
     $('.playlist-tracks').empty();
+    $('.preview').empty();
     $('.post-results').hide();
   }
 
